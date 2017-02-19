@@ -10,7 +10,7 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
-    <title>Simple Simon Says -- By Raditya Arya</title>
+    <title>Simple Simon</title>
   </head>
 
   <body>
@@ -20,7 +20,7 @@
           <div class="col s12 l6">
             <div class="card white darken-1">
               <div class="card-content">
-                <h3>Simple Simon Says</h3>
+                <!-- <h3>Simple Simon Says</h3> -->
                 <button id="button" class="btn waves-effect red">Click Me</button>
               </div>
             </div>
@@ -83,7 +83,7 @@
     <script>
     $('#button').click(function(){
       $.ajax({
-        url: 'http://localhost:3000/colors',
+        url: 'http://localhost:3000/color',
         type: 'GET',
         success: function(data){
           console.log(data);
