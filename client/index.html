@@ -2,92 +2,78 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-
-    <!-- Compiled and minified JavaScript -->
+    <link rel="stylesheet" type="text/css" href=https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.css>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
     <title>Simple Simon</title>
   </head>
 
   <body>
-    <div class="container">
-      <div class="thebox">
-        <div class="row">
-          <div class="col s12 l6">
-            <div class="card white darken-1">
-              <div class="card-content">
-                <!-- <h3>Simple Simon Says</h3> -->
-                <button id="button" class="btn waves-effect red">Click Me</button>
-              </div>
+    <div class="ui container stacked segment text atas">
+      <div class="ui grid">
+        <div class="six wide column">
+          <button id="button" class="ui button">
+            Random
+          </button>
+        </div>
+        <div class="ten wide column">
+          <h3>Simple Simon Says</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="ui grid">
+          <div class="three column row">
+            <div class="column">
+              <div id="1" class="box"></div>
+            </div>
+            <div class="column">
+              <div id="2" class="box"></div>
+            </div>
+            <div class="column">
+              <div id="3" class="box"></div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col s12 l6">
-
-                <div class="row">
-                  <div class="col s4 l4">
-                    <div id="1" class="box"></div>
-                  </div>
-                  <div class="col s4 l4">
-                    <div id="2" class="box"></div>
-                  </div>
-                  <div class="col s4 l4">
-                    <div id="3" class="box"></div>
-                  </div>
-                </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col s12 l6">
-
-                <div class="row">
-                  <div class="col s4 l4">
-                    <div id="4" class="box"></div>
-                  </div>
-                  <div class="col s4 l4">
-                    <div id="5" class="box"></div>
-                  </div>
-                  <div class="col s4 l4">
-                    <div id="6" class="box"></div>
-                  </div>
-                </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col s12 l6">
-
-                <div class="row">
-                  <div class="col s4 l4">
-                    <div id="7" class="box"></div>
-                  </div>
-                  <div class="col s4 l4">
-                    <div id="8" class="box"></div>
-                  </div>
-                  <div class="col s4 l4">
-                    <div id="9" class="box"></div>
-                  </div>
-                </div>
+      </div>
+      <div class="row">
+        <div class="ui grid">
+          <div class="three column row">
+            <div class="column">
+              <div id="4" class="box"></div>
+            </div>
+            <div class="column">
+              <div id="5" class="box"></div>
+            </div>
+            <div class="column">
+              <div id="6" class="box"></div>
+            </div>
           </div>
         </div>
       </div>
-
+      <div class="row">
+        <div class="ui grid">
+          <div class="three column row">
+            <div class="column">
+              <div id="7" class="box"></div>
+            </div>
+            <div class="column">
+              <div id="8" class="box"></div>
+            </div>
+            <div class="column">
+              <div id="9" class="box"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
     <script>
     $('#button').click(function(){
       $.ajax({
         url: 'http://localhost:3000/color',
         type: 'GET',
-        success: function(data){
-          console.log(data);
-          $(`#${data.index}`).css("background-color", `${data.color}`)
+        success: function(res){
+          console.log(res);
+          $(`#${res.index}`).css("background-color", `${res.color}`)
         }
       })
     })
